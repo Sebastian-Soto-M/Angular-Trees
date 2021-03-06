@@ -1,0 +1,12 @@
+@import "variables";
+
+mat-card-header {
+  button {
+    position: absolute;
+    top: -$padding;
+    right: $padding;
+  }
+  mat-card-title {
+    padding-right: $padding * 3;
+  }
+}

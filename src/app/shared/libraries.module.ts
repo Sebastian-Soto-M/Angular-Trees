@@ -12,4 +12,4 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
   ],
 })
-export class LibrariessModule {}
+export class LibrariesModule {}

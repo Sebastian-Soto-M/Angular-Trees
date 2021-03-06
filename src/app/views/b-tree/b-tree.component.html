@@ -1,0 +1,32 @@
+<div
+  fxLayout.lt-sm="column"
+  fxLayout="row"
+  fxLayoutGap="16px"
+  style="margin: 16px"
+>
+  <mat-card class="mat-elevation-z3" fxFlex>
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-card-title>Arbol B</mat-card-title>
+      <button mat-icon-button color="accent" (click)="mostrarRecursos()">
+        <mat-icon>link</mat-icon>
+      </button>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="/assets/images/btree.jpeg"
+      alt="Foto de un arbol B"
+    />
+    <mat-card-actions align="end">
+      <button mat-button color="primary" (click)="mostrarEjemplo()">
+        Ejemplo
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="mostrarCaracteristicas()"
+      >
+        Caracteristicas
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

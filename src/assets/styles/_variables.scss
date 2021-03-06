@@ -1,2 +1,4 @@
 // application wide variables
-$main-margin: 16px;
+$standard-space: 16px;
+$main-margin: $standard-space;
+$padding: $standard-space;

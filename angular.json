@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clean-template": {
+    "demo-trees": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,17 +20,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/clean-template",
+            "outputPath": "dist/demo-trees",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": [
-              "src/assets/styles/theme.scss",
-              "src/assets/styles/main.scss"
-            ],
+            "styles": ["src/assets/styles/main.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles"]
             },
@@ -69,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "clean-template:build"
+            "browserTarget": "demo-trees:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "clean-template:build:production"
+              "browserTarget": "demo-trees:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "clean-template:build"
+            "browserTarget": "demo-trees:build"
           }
         },
         "test": {
@@ -113,16 +110,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "clean-template:serve"
+            "devServerTarget": "demo-trees:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "clean-template:serve:production"
+              "devServerTarget": "demo-trees:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "clean-template"
+  "defaultProject": "demo-trees"
 }

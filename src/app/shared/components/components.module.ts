@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { LibrariesModule } from '@shared/libraries.module';
+import { MaterialModule } from '@shared/material.module';
+import { NumberFormComponent } from './number-form/number-form.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [NumberFormComponent],
+  imports: [LibrariesModule, MaterialModule],
+  exports: [NumberFormComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

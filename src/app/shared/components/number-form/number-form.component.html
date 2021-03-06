@@ -1,0 +1,16 @@
+<form
+  #baseForm="ngForm"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  fxLayout="row"
+  fxLayoutAlign=" space-around center"
+  fxLayoutGap="16px"
+>
+  <mat-form-field appearance="outline" fxFlex>
+    <mat-label>Number</mat-label>
+    <input autocomplete="off" matInput formControlName="num" type="number" />
+  </mat-form-field>
+  <button type="submit" mat-fab color="primary" [disabled]="form.invalid">
+    <mat-icon>add</mat-icon>
+  </button>
+</form>
