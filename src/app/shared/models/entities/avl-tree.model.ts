@@ -13,12 +13,12 @@
                            |___/         
 */
 
-class AVLnode<T> {
+class NodeAVL<T> {
   balance: number;
-  left: AVLnode<T> | null;
-  right: AVLnode<T> | null;
+  left: NodeAVL<T> | null;
+  right: NodeAVL<T> | null;
 
-  constructor(public value: T, public parent: AVLnode<T> | null = null) {
+  constructor(public value: T, public parent: NodeAVL<T> | null = null) {
     this.balance = 0;
     this.left = null;
     this.right = null;
@@ -26,14 +26,14 @@ class AVLnode<T> {
 }
 
 export class AVLTree<T> {
-  constructor(private root: AVLnode<T> | null = null) {}
+  constructor(private root: NodeAVL<T> | null = null) {}
 
   add(key: T): boolean {
     if (this.root === null) {
-      this.root = new AVLnode<T>(key);
+      this.root = new NodeAVL<T>(key);
     } else {
-      let n: AVLnode<T> | null = this.root,
-        parent: AVLnode<T> | null = null;
+      let n: NodeAVL<T> | null = this.root,
+        parent: NodeAVL<T> | null = null;
 
       while (true) {
         if (n.value === key) {
@@ -47,9 +47,9 @@ export class AVLTree<T> {
 
         if (n === null) {
           if (goLeft) {
-            parent.left = new AVLnode<T>(key, parent);
+            parent.left = new NodeAVL<T>(key, parent);
           } else {
-            parent.right = new AVLnode<T>(key, parent);
+            parent.right = new NodeAVL<T>(key, parent);
           }
 
           this.rebalance(parent);
@@ -61,8 +61,8 @@ export class AVLTree<T> {
     return true;
   }
 
-  private rotateLeft(a: AVLnode<T>): AVLnode<T> {
-    let b: AVLnode<T> | null = a.right;
+  private rotateLeft(a: NodeAVL<T>): NodeAVL<T> {
+    let b: NodeAVL<T> | null = a.right;
     if (b !== null) {
       b.parent = a.parent;
       a.right = b.left;
@@ -89,8 +89,8 @@ export class AVLTree<T> {
     return a;
   }
 
-  private rotateRight(a: AVLnode<T>): AVLnode<T> {
-    let b: AVLnode<T> | null = a.left;
+  private rotateRight(a: NodeAVL<T>): NodeAVL<T> {
+    let b: NodeAVL<T> | null = a.left;
     if (b !== null) {
       b.parent = a.parent;
       a.left = b.right;
@@ -117,17 +117,17 @@ export class AVLTree<T> {
     return a;
   }
 
-  private rotateLeftThenRight(n: AVLnode<T>): AVLnode<T> {
+  private rotateLeftThenRight(n: NodeAVL<T>): NodeAVL<T> {
     n.left = this.rotateLeft(n.left!);
     return this.rotateRight(n);
   }
 
-  private rotateRightThenLeft(n: AVLnode<T>): AVLnode<T> {
+  private rotateRightThenLeft(n: NodeAVL<T>): NodeAVL<T> {
     n.right = this.rotateRight(n.right!);
     return this.rotateLeft(n);
   }
 
-  private rebalance(n: AVLnode<T>): void {
+  private rebalance(n: NodeAVL<T>): void {
     this.setBalance(n);
 
     if (n.balance === -2) {
@@ -151,14 +151,14 @@ export class AVLTree<T> {
     }
   }
 
-  private height(n: AVLnode<T> | null): number {
+  private height(n: NodeAVL<T> | null): number {
     if (n === null) {
       return -1;
     }
     return 1 + Math.max(this.height(n.left!), this.height(n.right!));
   }
 
-  private setBalance(n: AVLnode<T>): void {
+  private setBalance(n: NodeAVL<T>): void {
     n.balance = this.height(n.right!) - this.height(n.left!);
   }
 
@@ -168,7 +168,7 @@ export class AVLTree<T> {
     return res;
   }
 
-  private recPreOrder(node: AVLnode<T> | null, result: T[]) {
+  private recPreOrder(node: NodeAVL<T> | null, result: T[]) {
     if (node != null) {
       result.push(node.value);
       this.recPreOrder(node.left, result);
@@ -182,7 +182,7 @@ export class AVLTree<T> {
     return res;
   }
 
-  private recInOrder(node: AVLnode<T> | null, result: T[]): void {
+  private recInOrder(node: NodeAVL<T> | null, result: T[]): void {
     if (node !== null) {
       this.recInOrder(node.left, result);
       result.push(node.value);
@@ -196,7 +196,7 @@ export class AVLTree<T> {
     return res;
   }
 
-  private recPostOrder(node: AVLnode<T> | null, result: T[]): void {
+  private recPostOrder(node: NodeAVL<T> | null, result: T[]): void {
     if (node != null) {
       this.recPostOrder(node.left, result);
       this.recPostOrder(node.right, result);

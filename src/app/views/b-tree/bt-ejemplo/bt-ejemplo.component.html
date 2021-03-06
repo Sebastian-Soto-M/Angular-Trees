@@ -1,24 +1,13 @@
 <h1>Ejemplo</h1>
 <p>Dado un arbol con los siguientes valores (insertados en dicho orden):</p>
-<p>####### ######</p>
-
+<mat-chip-list>
+  <mat-chip color="primary" *ngFor="let val of values">{{ val }}</mat-chip>
+</mat-chip-list>
 <h2>Recorridos</h2>
 <mat-list>
   <mat-list-item>
     <mat-icon matListIcon color="primary">list</mat-icon>
     <span matLine>Pre Orden</span>
-    <span matLine>#########</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item>
-    <mat-icon matListIcon color="primary">list</mat-icon>
-    <span matLine>In Orden</span>
-    <span matLine>#########</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item>
-    <mat-icon matListIcon color="primary">list</mat-icon>
-    <span matLine>Post Orden</span>
-    <span matLine>#########</span>
+    <span matLine>{{ tree.sortPreOrder() }}</span>
   </mat-list-item>
 </mat-list>

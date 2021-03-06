@@ -15,21 +15,19 @@ const CUADRO_COMPARATIVO: ResumenArbol[] = [
   },
   {
     nombre: 'B',
-    descripcion: '',
-    comentarios:
-      'Dolor neque eum aliquid at autem quaerat vitae, amet sed Atque pariatur esse fuga corrupti quasi? Sapiente aspernatur commodi non nihil iusto odit. Amet expedita minus dolorem quasi saepe! Provident.',
+    descripcion:
+      'En este tipo de árbol, los nodos internos tienen un número variable de nodos hijo dentro de un rango predefinido. Cuando se agregan o borran datos, la cantidad de nodos hijo se adapta para que se mantenga dicho rango. Gracias a este proceso de adaptación, estos árbol no deben balancearse tan frecuentemente como otros árboles',
+    comentarios: 'En un árbol B, los nodos son mejor conocidos como páginas',
   },
   {
     nombre: 'B+',
-    descripcion: '',
-    comentarios:
-      'Dolor neque eum aliquid at autem quaerat vitae, amet sed Atque pariatur esse fuga corrupti quasi? Sapiente aspernatur commodi non nihil iusto odit. Amet expedita minus dolorem quasi saepe! Provident.',
+    descripcion: ' ',
+    comentarios: ' ',
   },
   {
     nombre: 'Rojo Negro',
-    descripcion: '',
-    comentarios:
-      'Dolor neque eum aliquid at autem quaerat vitae, amet sed Atque pariatur esse fuga corrupti quasi? Sapiente aspernatur commodi non nihil iusto odit. Amet expedita minus dolorem quasi saepe! Provident.',
+    descripcion: ' ',
+    comentarios: ' ',
   },
 ];
 @Component({

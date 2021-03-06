@@ -20,12 +20,9 @@ export class AvlEjemploComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.tree.add(10);
-    this.tree.add(2);
-    this.tree.add(16);
-    this.tree.add(23);
-    this.tree.add(15);
-    this.tree.add(29);
+    for (let val of this.values) {
+      this.tree.add(val);
+    }
 
     this.sorts = {
       pre: this.tree.sortPreOrder(),
