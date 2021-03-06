@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { BtCaracteristicasComponent } from './bt-caracteristicas/bt-caracteristicas.component';
 import { BtEjemploComponent } from './bt-ejemplo/bt-ejemplo.component';
 import { BtRecursosComponent } from './bt-recursos/bt-recursos.component';
 
@@ -20,9 +19,5 @@ export class BTreeComponent implements OnInit {
 
   mostrarEjemplo(): void {
     this.bs.open(BtEjemploComponent);
-  }
-
-  mostrarCaracteristicas(): void {
-    this.bs.open(BtCaracteristicasComponent);
   }
 }

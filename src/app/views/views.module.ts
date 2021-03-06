@@ -5,20 +5,22 @@ import { BTreeComponent } from './b-tree/b-tree.component';
 import { BpTreeComponent } from './bp-tree/bp-tree.component';
 import { RbTreeComponent } from './rb-tree/rb-tree.component';
 import { AvlTreeComponent } from './avl-tree/avl-tree.component';
-import { BtCaracteristicasComponent } from './b-tree/bt-caracteristicas/bt-caracteristicas.component';
 import { BtEjemploComponent } from './b-tree/bt-ejemplo/bt-ejemplo.component';
 import { BtRecursosComponent } from './b-tree/bt-recursos/bt-recursos.component';
+import { AvlEjemploComponent } from './avl-tree/avl-ejemplo/avl-ejemplo.component';
+import { AvlRecursosComponent } from './avl-tree/avl-recursos/avl-recursos.component';
 
 @NgModule({
   declarations: [
+    AvlEjemploComponent,
+    AvlRecursosComponent,
     AvlTreeComponent,
     BTreeComponent,
     BpTreeComponent,
-    HomeComponent,
-    RbTreeComponent,
-    BtCaracteristicasComponent,
     BtEjemploComponent,
     BtRecursosComponent,
+    HomeComponent,
+    RbTreeComponent,
   ],
   imports: [SharedModule],
   exports: [HomeComponent],

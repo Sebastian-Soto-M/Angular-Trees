@@ -1,0 +1,14 @@
+.table-container {
+  width: 100%;
+  overflow: auto;
+  margin-top: 16px;
+}
+
+.mat-cell,
+.mat-header-cell {
+  padding: 24px 0px;
+  padding-left: 24px;
+  &:first-of-type {
+    padding: 0px 24px;
+  }
+}

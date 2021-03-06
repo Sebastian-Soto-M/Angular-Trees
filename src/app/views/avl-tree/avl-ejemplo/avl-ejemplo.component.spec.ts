@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtCaracteristicasComponent } from './bt-caracteristicas.component';
+import { AvlEjemploComponent } from './avl-ejemplo.component';
 
-describe('BtCaracteristicasComponent', () => {
-  let component: BtCaracteristicasComponent;
-  let fixture: ComponentFixture<BtCaracteristicasComponent>;
+describe('AvlEjemploComponent', () => {
+  let component: AvlEjemploComponent;
+  let fixture: ComponentFixture<AvlEjemploComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtCaracteristicasComponent ]
+      declarations: [ AvlEjemploComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtCaracteristicasComponent);
+    fixture = TestBed.createComponent(AvlEjemploComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
